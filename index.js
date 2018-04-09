@@ -57,6 +57,13 @@ export default class CheckBox extends Component {
         }
         return null;
     }
+    componentWillReceiveProps(newProps) {
+        if (newProps.isChecked != this.state.isChecked) {
+            this.setState({
+                isChecked: !this.state.isChecked
+            })
+        }
+    }
     onClick() {
         this.setState({
             isChecked: !this.state.isChecked
